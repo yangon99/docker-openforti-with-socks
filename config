@@ -1,0 +1,7 @@
+host = sslvpn.example.edu.cn
+port = 443
+username = guest
+password = bar
+set-routes = 1
+set-dns = 1
+trusted-cert = e9bf008881c70e84f509e492ce953a2e04693d0842736452d613ad6135388d3d
