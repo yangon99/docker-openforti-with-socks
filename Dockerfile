@@ -31,7 +31,7 @@ COPY config /etc/openfortivpn/config
 COPY run-proxy /
 
 RUN \
-    echo "Installing&Configuring runtime envirement..." &&\
+    echo "Installing&Configuring runtime environment..." &&\
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories &&\
     echo "pppoe" >> /etc/modules &&\
     apk add --no-cache ppp bash coreutils &&\
