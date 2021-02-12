@@ -1,6 +1,4 @@
 #!/bin/bash
 
-mknod /dev/ppp c 108 0
-openfortivpn -c /etc/openfortivpn/config &
-
-microsocks $@
+microsocks $@ &
+exec openfortivpn -c /etc/openfortivpn/config

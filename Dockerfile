@@ -34,8 +34,10 @@ RUN \
     echo "Installing&Configuring runtime environment..." &&\
     sed -i 's/dl-cdn.alpinelinux.org/mirrors.bfsu.edu.cn/g' /etc/apk/repositories &&\
     echo "pppoe" >> /etc/modules &&\
-    apk add --no-cache ppp bash coreutils &&\
+    apk add --no-cache ppp bash coreutils curl &&\
     chown root:root /run-proxy && chmod 4755 /run-proxy
 
+HEALTHCHECK --interval=2m --timeout=30s \
+  CMD curl -fs http://jwxs.hebut.edu.cn/ || exit 1
 
 ENTRYPOINT ["/run-proxy"]
