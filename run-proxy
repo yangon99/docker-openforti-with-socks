@@ -1,4 +1,6 @@
 #!/bin/bash
 
+echo run microsocks
 microsocks $@ &
+echo run openfortivpn
 exec openfortivpn -c /etc/openfortivpn/config
